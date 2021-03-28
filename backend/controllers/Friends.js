@@ -1,17 +1,24 @@
-import Friend from "../models/Friend";
-import friendsList from "../data/Friends";
+const Friend = require("../models/Friend");
+const friendsList = require("../data/Friends");
 
 
 class Friends {
-    constructor(friend) {
-        this.friend =  new Friend(friend)
+    #friendsList = friendsList
+    constructor(friend=null) {
+        // this.friendsList = friendsList
+        if(friend){
+            this.friend =  new Friend(friend)
+        }
+
     }
 
     addFriend(){
         friendsList.push(this.friend)
     }
     getFriends(){
-        return friendsList;
+        return  this.#friendsList;
     }
 
 }
+
+module.exports = Friends

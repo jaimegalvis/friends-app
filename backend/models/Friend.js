@@ -1,12 +1,3 @@
-//
-// {
-//     "id": 1,
-//     "name": "Yilmer",
-//     "phone": "23423423",
-//     "email": "asdfasfas@asdasd.asdasd",
-//     "status": "Inactive"
-// }
-
 class Friend {
     constructor(id, name, phone, email) {
         this.id = id;
@@ -17,4 +8,4 @@ class Friend {
     };
 }
 
-export default Friend;
+module.exports = Friend

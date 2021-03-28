@@ -1,9 +1,23 @@
 const express = require('express');
 const router = express.Router();
+var debug = require('debug')('backend:friend-router');
 
-/* GET users listing. */
+//controllers
+const Friends = require( '../../controllers/Friends')
+
+let Friend = new Friends()
+
+let friendsList = Friend.getFriends()
+
+
+/* GET friends listing. */
 router.get('/', function(req, res, next) {
-    res.send('Yo debo darte la lista de amigos');
+    res.setHeader('content-type', 'application/json');
+    res.send(JSON.stringify(friendsList));
+});
+
+router.post('/add', function(req, res, next) {
+
 });
 
 module.exports = router;
